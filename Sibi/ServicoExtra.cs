@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 
 namespace Sibi
 {
-    internal class Hotel
+    internal class ServicoExtra
     {
         // propriedades
         private string nome;
-        private string cidade;
-        private List<Reserva> reservas = new List<Reserva>();
+        private string preco;
 
         // getters/setters
         public string nome { get { return this.nome; } }
-        public string cidade { get { return this.cidade; } }
+        public string preco { get { return this.preco; } }
 
         // método construtor
-        public Hotel(string nom, string cida)
+        public ServicoExtra(string nom, string cid)
         {
             this.nome = nom;
-            this.cidade = cida;
+            this.cidade = cid;
         }
