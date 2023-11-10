@@ -12,6 +12,7 @@ namespace Sibi
         private double valor;
         // private datetime data;
         private string tipo;
+        s
 
         // getters/setters
         public string valor { get { return this.valor; } }
