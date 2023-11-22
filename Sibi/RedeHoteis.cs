@@ -13,10 +13,12 @@ namespace Sibi
         private List<Hotel> hoteis = new List<Hotel>();
 
         // getters/setters
-        public string nome { get { return this.nome; } }
+        public string Nome { get => nome; private set => nome = value; }
 
         // método construtor
         public RedeHoteis(string nom)
         {
             this.nome = nom;
         }
+    }
+}

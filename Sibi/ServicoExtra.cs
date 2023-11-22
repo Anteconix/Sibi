@@ -13,12 +13,14 @@ namespace Sibi
         private string preco;
 
         // getters/setters
-        public string nome { get { return this.nome; } }
-        public string preco { get { return this.preco; } }
+        public string Nome { get => nome; private set => nome = value; }
+        public string Preco { get => preco; private set => preco = value; }
 
         // método construtor
-        public ServicoExtra(string nom, string cid)
+        public ServicoExtra(string nom, string pre)
         {
             this.nome = nom;
-            this.cidade = cid;
+            this.preco = pre;
         }
+    }
+}

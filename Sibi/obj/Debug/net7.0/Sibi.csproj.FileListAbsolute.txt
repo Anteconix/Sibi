@@ -1,0 +1,15 @@
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\obj\Debug\net7.0\Sibi.csproj.AssemblyReference.cache
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\obj\Debug\net7.0\Sibi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\obj\Debug\net7.0\Sibi.AssemblyInfoInputs.cache
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\obj\Debug\net7.0\Sibi.AssemblyInfo.cs
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\obj\Debug\net7.0\Sibi.csproj.CoreCompileInputs.cache
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\bin\Debug\net7.0\Sibi.exe
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\bin\Debug\net7.0\Sibi.deps.json
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\bin\Debug\net7.0\Sibi.runtimeconfig.json
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\bin\Debug\net7.0\Sibi.dll
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\bin\Debug\net7.0\Sibi.pdb
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\obj\Debug\net7.0\Sibi.dll
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\obj\Debug\net7.0\refint\Sibi.dll
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\obj\Debug\net7.0\Sibi.pdb
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\obj\Debug\net7.0\Sibi.genruntimeconfig.cache
+C:\Users\carlos04.silva\Documents\POO\sibi 21-11\Sibi\obj\Debug\net7.0\ref\Sibi.dll

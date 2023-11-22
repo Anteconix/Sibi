@@ -10,14 +10,12 @@ namespace Sibi
     {
         // propriedades
         private double valor;
-        // private datetime data;
+        // private datetime date;
         private string tipo;
-        s
 
         // getters/setters
-        public string valor { get { return this.valor; } }
-        // public string data { get { return this.data; } }
-        public string tipo { get { return this.tipo; } }
+        public double Valor { get => valor; private set => valor = value; }
+        public string Tipo { get => tipo; private set => tipo = value; }
 
         // método construtor
         public Pagamento(double val, string tip)
@@ -25,5 +23,6 @@ namespace Sibi
             this.valor = val;
             // this.data = dat;
             this.tipo = tip;
-            this.telefone = tel;
         }
+    }
+}

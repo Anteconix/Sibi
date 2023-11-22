@@ -15,10 +15,10 @@ namespace Sibi
         private string telefone;
 
         // getters/setters
-        public string nome { get { return this.nome; } }
-        public string cpf { get { return this.cpf; } }
-        public string endereco { get { return this.endereco; } }
-        public string telefone { get { return this.telefone; } }
+        public string Nome { get => nome; private set => nome = value; }
+        public string Cpf { get => cpf; private set => cpf = value; }
+        public string Endereco { get => endereco; private set => endereco = value; }
+        public string Telefone { get => telefone; private set => telefone = value; }
 
         // método construtor
         public Hospede(string nom, string cpf, string end, string tel)
@@ -28,3 +28,5 @@ namespace Sibi
             this.endereco = end;
             this.telefone = tel;
         }
+    }
+}
