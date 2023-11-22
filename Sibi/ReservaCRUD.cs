@@ -27,7 +27,7 @@ namespace Sibi
 
             this.montarTela();
             this.entrarCodigo();
-            this.posicao = bd.buscar("autor", this.codigo);
+            this.posicao = bd.buscar("reserva", this.codigo);
 
             if (this.posicao == -1)
             {
@@ -39,16 +39,18 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.gravar("autor", new Autor(this.codigo, this.nome, this.nacionalidade));
+                        bd.gravar("reserva", new Reserva(this.nome, this.cpf, this.endereco, this.telefone));
                     }
                 }
             }
             else
             {
                 // alteração / exclusão
-                Autor obj = (Autor)bd.recuperar("autor", this.posicao);
+                Reserva obj = (Reserva)bd.recuperar("reserva", this.posicao);
                 this.nome = obj.Nome;
-                this.nacionalidade = obj.Nacionalidade;
+                this.cpf = obj.cpf;
+                this.endereco = obj.endereco;
+                this.telefone = obj.telefone;
 
                 this.mostrarDados();
                 resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");
@@ -59,8 +61,8 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        Autor novoObj = new Autor(this.codigo, this.nome, this.nacionalidade);
-                        bd.alterar("autor", obj, novoObj);
+                        Reserva novoObj = new Reserva(this.nome, this.cpf, this.endereco, this.telefone);
+                        bd.alterar("reserva", obj, novoObj);
                     }
                 }
                 if (resp.ToUpper() == "E")
@@ -68,7 +70,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma exclusão (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.excluir("autor", obj);
+                        bd.excluir("reserva", obj);
                     }
                 }
             }
@@ -77,13 +79,15 @@ namespace Sibi
 
         public void montarTela()
         {
-            tl.montarMoldura(10, 6, 70, 12, "Cadastro de Autors");
+            tl.montarMoldura(10, 6, 70, 12, "Cadastro de Reserva");
             Console.SetCursorPosition(11, 8);
-            Console.Write("Codigo        :");
+            Console.Write("Nome        :");
             Console.SetCursorPosition(11, 9);
-            Console.Write("Nome          :");
+            Console.Write("CPF         :");
             Console.SetCursorPosition(11, 10);
-            Console.Write("Nacionalidade :");
+            Console.Write("Endereco    :");
+            Console.SetCursorPosition(11, 11);
+            Console.Write("Telefone    :");
         }
 
         public void entrarCodigo()
@@ -97,7 +101,11 @@ namespace Sibi
             Console.SetCursorPosition(27, 9);
             this.nome = Console.ReadLine();
             Console.SetCursorPosition(27, 10);
-            this.nacionalidade = Console.ReadLine();
+            this.cpf = Console.ReadLine();
+            Console.SetCursorPosition(27, 11);
+            this.endereco = Console.ReadLine();
+            Console.SetCursorPosition(27, 12);
+            this.telefone = Console.ReadLine();
         }
 
         public void mostrarDados()
@@ -105,7 +113,11 @@ namespace Sibi
             Console.SetCursorPosition(27, 9);
             Console.Write(this.nome);
             Console.SetCursorPosition(27, 10);
-            Console.Write(this.nacionalidade);
+            Console.Write(this.cpf);
+            Console.SetCursorPosition(27, 11);
+            Console.Write(this.endereco);
+            Console.SetCursorPosition(27, 12);
+            Console.Write(this.telefone);
         }
     }
 }
