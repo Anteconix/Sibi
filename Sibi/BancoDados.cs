@@ -80,31 +80,53 @@ namespace Sibi
 
         public void alterar(string onde, Object oque, Object novo)
         {
-            if (onde == "editora")
+            if (onde == "hospede")
             {
-                int x = this.buscar("editora", ((Editora)oque).Codigo);
-                this.editoras[x] = (Editora)novo;
+                int x = this.buscar("hospede", ((Hospede)oque).Codigo);
+                this.hospedes[x] = (Hospede)novo;
             }
-
-            if (onde == "autor")
+            if (onde == "hotel")
             {
-                int x = this.buscar("autor", ((Autor)oque).Codigo);
-                this.autores[x] = (Autor)novo;
+                int x = this.buscar("hotel", ((Hotel)oque).Codigo);
+                this.hoteis[x] = (Hotel)novo;
             }
-
-            if (onde == "livro")
+            if (onde == "pagamento")
             {
-                int x = this.buscar("livro", ((Livro)oque).Codigo);
-                this.livros[x] = (Livro)novo;
+                int x = this.buscar("pagamento", ((Pagamento)oque).Codigo);
+                this.pagamentos[x] = (Pagamento)novo;
+            }
+            if (onde == "quarto")
+            {
+                int x = this.buscar("quarto", ((Quarto)oque).Codigo);
+                this.quartos[x] = (Quarto)novo;
+            }
+            if (onde == "redehotel")
+            {
+                int x = this.buscar("redehotel", ((RedeHoteis)oque).Codigo);
+                this.redeshoteis[x] = (RedeHoteis)novo;
+            }
+            if (onde == "reserva")
+            {
+                int x = this.buscar("reserva", ((Reserva)oque).Codigo);
+                this.reservas[x] = (Reserva)novo;
+            }
+            if (onde == "servicoextra")
+            {
+                int x = this.buscar("servicoextra", ((ServicoExtra)oque).Codigo);
+                this.servicosextras[x] = (ServicoExtra)novo;
             }
         }
 
 
         public void excluir(string onde, Object oque)
         {
-            if (onde == "editora") this.editoras.Remove((Editora)oque);
-            if (onde == "autor") this.autores.Remove((Autor)oque);
-            if (onde == "livro") this.livros.Remove((Livro)oque);
+            if (onde == "hospede") this.hospedes.Remove((Hospede)oque);
+            if (onde == "hotel") this.hoteis.Remove((Hotel)oque);
+            if (onde == "pagamento") this.pagamentos.Remove((Pagamento)oque);
+            if (onde == "quarto") this.quartos.Remove((Quarto)oque);
+            if (onde == "redehotel") this.redeshoteis.Remove((RedeHoteis)oque);
+            if (onde == "reserva") this.reservas.Remove((Reserva)oque);
+            if (onde == "servicoextra") this.servicosextras.Remove((ServicoExtra)oque);
         }
 
 
@@ -115,10 +137,14 @@ namespace Sibi
 
             if (pos >= 0)
             {
-                if (onde == "autor") result = this.autores[pos].Nome;
-                if (onde == "editora") result = this.editoras[pos].Nome;
+                if (onde == "hospede") result = this.hospedes[pos].Nome;
+                if (onde == "hotel") result = this.hoteis[pos].Nome;
+                if (onde == "pagamento") result = this.pagamentos[pos].Nome;
+                if (onde == "quarto") result = this.quartos[pos].Nome;
+                if (onde == "redehotel") result = this.redeshoteis[pos].Nome;
+                if (onde == "reserva") result = this.reservas[pos].Nome;
+                if (onde == "servicoextra") result = this.servicosextras[pos].Nome;
             }
-
             return result;
         }
     }
