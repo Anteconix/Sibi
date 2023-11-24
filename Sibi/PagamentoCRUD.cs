@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Sibi
 {
-    public class ReservaCRUD
+    public class PagamentoCRUD
     {
-        private string nome, cpf, endereco, telefone;
+        private double valor;
+        private string tipo;
         private BancoDados bd;
         private Tela tl;
         private int posicao;
 
 
-        public ReservaCRUD(BancoDados banco, Tela tela)
+        public PagamentoCRUD(BancoDados banco, Tela tela)
         {
             this.bd = banco;
             this.tl = tela;
@@ -27,7 +28,7 @@ namespace Sibi
 
             this.montarTela();
             this.entrarCodigo();
-            this.posicao = bd.buscar("reserva", this.codigo);
+            this.posicao = bd.buscar("Pagamento", this.codigo);
 
             if (this.posicao == -1)
             {
@@ -39,18 +40,16 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.gravar("reserva", new Reserva(this.nome, this.cpf, this.endereco, this.telefone));
+                        bd.gravar("Pagamento", new Pagamento(this.valor, this.tipo));
                     }
                 }
             }
             else
             {
                 // alteração / exclusão
-                Reserva obj = (Reserva)bd.recuperar("reserva", this.posicao);
-                this.nome = obj.nome;
-                this.cpf = obj.cpf;
-                this.endereco = obj.endereco;
-                this.telefone = obj.telefone;
+                Pagamento obj = (Pagamento)bd.recuperar("Pagamento", this.posicao);
+                this.valor = obj.valor;
+                this.tipo = obj.tipo;
 
                 this.mostrarDados();
                 resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");
@@ -61,8 +60,8 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        Reserva novoObj = new Reserva(this.nome, this.cpf, this.endereco, this.telefone);
-                        bd.alterar("reserva", obj, novoObj);
+                        Pagamento novoObj = new Pagamento(this.valor, this.tipo);
+                        bd.alterar("Pagamento", obj, novoObj);
                     }
                 }
                 if (resp.ToUpper() == "E")
@@ -70,7 +69,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma exclusão (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.excluir("reserva", obj);
+                        bd.excluir("Pagamento", obj);
                     }
                 }
             }
@@ -79,15 +78,12 @@ namespace Sibi
 
         public void montarTela()
         {
-            tl.montarMoldura(10, 6, 70, 12, "Cadastro de Reserva");
+            tl.montarMoldura(10, 6, 70, 12, "Cadastro de Pagamento");
             Console.SetCursorPosition(11, 8);
-            Console.Write("Nome        :");
+            Console.Write("Valor        :");
             Console.SetCursorPosition(11, 9);
-            Console.Write("CPF         :");
+            Console.Write("Tipo         :");
             Console.SetCursorPosition(11, 10);
-            Console.Write("Endereco    :");
-            Console.SetCursorPosition(11, 11);
-            Console.Write("Telefone    :");
         }
 
         public void entrarCodigo()
@@ -99,25 +95,19 @@ namespace Sibi
         public void entrarDados()
         {
             Console.SetCursorPosition(27, 9);
-            this.nome = Console.ReadLine();
+            this.valor = Console.ReadLine();
             Console.SetCursorPosition(27, 10);
-            this.cpf = Console.ReadLine();
+            this.tipo = Console.ReadLine();
             Console.SetCursorPosition(27, 11);
-            this.endereco = Console.ReadLine();
-            Console.SetCursorPosition(27, 12);
-            this.telefone = Console.ReadLine();
         }
 
         public void mostrarDados()
         {
             Console.SetCursorPosition(27, 9);
-            Console.Write(this.nome);
+            Console.Write(this.valor);
             Console.SetCursorPosition(27, 10);
-            Console.Write(this.cpf);
+            Console.Write(this.tipo);
             Console.SetCursorPosition(27, 11);
-            Console.Write(this.endereco);
-            Console.SetCursorPosition(27, 12);
-            Console.Write(this.telefone);
         }
     }
 }

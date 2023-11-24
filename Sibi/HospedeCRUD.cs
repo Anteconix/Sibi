@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sibi
 {
-    public class ReservaCRUD
+    public class HospedesCRUD
     {
         private string nome, cpf, endereco, telefone;
         private BancoDados bd;
@@ -14,7 +14,7 @@ namespace Sibi
         private int posicao;
 
 
-        public ReservaCRUD(BancoDados banco, Tela tela)
+        public HospedesCRUD(BancoDados banco, Tela tela)
         {
             this.bd = banco;
             this.tl = tela;
@@ -27,7 +27,7 @@ namespace Sibi
 
             this.montarTela();
             this.entrarCodigo();
-            this.posicao = bd.buscar("reserva", this.codigo);
+            this.posicao = bd.buscar("Hospedes", this.codigo);
 
             if (this.posicao == -1)
             {
@@ -39,14 +39,14 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.gravar("reserva", new Reserva(this.nome, this.cpf, this.endereco, this.telefone));
+                        bd.gravar("Hospedes", new Hospedes(this.nome, this.cpf, this.endereco, this.telefone));
                     }
                 }
             }
             else
             {
                 // alteração / exclusão
-                Reserva obj = (Reserva)bd.recuperar("reserva", this.posicao);
+                Hospedes obj = (Hospedes)bd.recuperar("Hospedes", this.posicao);
                 this.nome = obj.nome;
                 this.cpf = obj.cpf;
                 this.endereco = obj.endereco;
@@ -61,8 +61,8 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        Reserva novoObj = new Reserva(this.nome, this.cpf, this.endereco, this.telefone);
-                        bd.alterar("reserva", obj, novoObj);
+                        Hospedes novoObj = new Hospedes(this.nome, this.cpf, this.endereco, this.telefone);
+                        bd.alterar("Hospedes", obj, novoObj);
                     }
                 }
                 if (resp.ToUpper() == "E")
@@ -70,7 +70,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma exclusão (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.excluir("reserva", obj);
+                        bd.excluir("Hospedes", obj);
                     }
                 }
             }
@@ -79,7 +79,7 @@ namespace Sibi
 
         public void montarTela()
         {
-            tl.montarMoldura(10, 6, 70, 12, "Cadastro de Reserva");
+            tl.montarMoldura(10, 6, 70, 12, "Cadastro de Hospedes");
             Console.SetCursorPosition(11, 8);
             Console.Write("Nome        :");
             Console.SetCursorPosition(11, 9);
