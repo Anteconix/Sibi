@@ -13,7 +13,6 @@ namespace Sibi
         private Tela tl;
         private int posicao;
 
-
         public ReservaCRUD(BancoDados banco, Tela tela)
         {
             this.bd = banco;
@@ -47,7 +46,7 @@ namespace Sibi
             {
                 // alteração / exclusão
                 Reserva obj = (Reserva)bd.recuperar("reserva", this.posicao);
-                this.nome = obj.nome;
+                this.nome = obj.Nome;
                 this.cpf = obj.cpf;
                 this.endereco = obj.endereco;
                 this.telefone = obj.telefone;
