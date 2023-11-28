@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sibi
 {
-    public class HospedesCRUD
+    public class HospedeCRUD
     {
         private string nome, cpf, endereco, telefone;
         private BancoDados bd;
@@ -14,7 +14,7 @@ namespace Sibi
         private int posicao;
 
 
-        public HospedesCRUD(BancoDados banco, Tela tela)
+        public HospedeCRUD(BancoDados banco, Tela tela)
         {
             this.bd = banco;
             this.tl = tela;

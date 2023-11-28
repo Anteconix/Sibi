@@ -29,3 +29,11 @@ C:\Users\carlos04.silva\Documents\POO\sibi 24-11\Sibi\obj\Debug\net7.0\Sibi.cspr
 C:\Users\carlos04.silva\Documents\POO\sibi 24-11\Sibi\obj\Debug\net7.0\Sibi.dll
 C:\Users\carlos04.silva\Documents\POO\sibi 24-11\Sibi\obj\Debug\net7.0\refint\Sibi.dll
 C:\Users\carlos04.silva\Documents\POO\sibi 24-11\Sibi\obj\Debug\net7.0\Sibi.pdb
+C:\Users\carlos04.silva\Documents\POO\Sibi 18-11\Sibi\obj\Debug\net7.0\Sibi.csproj.AssemblyReference.cache
+C:\Users\carlos04.silva\Documents\POO\Sibi 18-11\Sibi\obj\Debug\net7.0\Sibi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\carlos04.silva\Documents\POO\Sibi 18-11\Sibi\obj\Debug\net7.0\Sibi.AssemblyInfoInputs.cache
+C:\Users\carlos04.silva\Documents\POO\Sibi 18-11\Sibi\obj\Debug\net7.0\Sibi.AssemblyInfo.cs
+C:\Users\carlos04.silva\Documents\POO\Sibi 18-11\Sibi\obj\Debug\net7.0\Sibi.csproj.CoreCompileInputs.cache
+C:\Users\carlos04.silva\Documents\POO\Sibi 18-11\Sibi\obj\Debug\net7.0\Sibi.dll
+C:\Users\carlos04.silva\Documents\POO\Sibi 18-11\Sibi\obj\Debug\net7.0\refint\Sibi.dll
+C:\Users\carlos04.silva\Documents\POO\Sibi 18-11\Sibi\obj\Debug\net7.0\Sibi.pdb

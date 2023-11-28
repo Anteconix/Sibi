@@ -21,12 +21,12 @@
         {
             Console.BackgroundColor = this.corFundo;
             Console.ForegroundColor = this.corTexto;
-            Console.Clear();
         }
 
 
         public void montarTelaSistema(string nome = "Sistema")
         {
+            Console.Clear();
             this.montarMoldura(0, 0, 79, 24);
             this.montarLinhaHor(2, 0, 79);
             this.centralizar(1, 0, 79, nome);
@@ -137,6 +137,17 @@
             Console.Write("Opção : ");
             op = Console.ReadLine();
             return op;
+        }
+
+
+        public string fazerPergunta(int col, int lin, string pergunta)
+        {
+            string resposta;
+            Console.SetCursorPosition(col, lin);
+            Console.Write(pergunta);
+            resposta = Console.ReadLine();
+            this.limparArea(col, lin, col + pergunta.Count() + 3, lin);
+            return resposta;
         }
     }
 }
